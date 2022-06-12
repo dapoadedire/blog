@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 
     'blog',
 
-    'debug_toolbar'
+    'debug_toolbar',
 
      "whitenoise.runserver_nostatic",  # new
 ]
