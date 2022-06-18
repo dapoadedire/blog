@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    {% block title %} {% endblock title %}
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  {% block title %}
+  <body>
+    <header>
+      <div>
+        <label for="logo"><a href="{% url 'blog-home' %}">Dapo Adedire</a> </label>
+        <nav>
+          {% block nav %}
+          {% endblock nav %}
+          
+        </nav>
+      </div>
+    </header>
+    <main>
 
-  {% endblock title %}
-</head>
-
-<body>
-  <header>
-    <!-- <h1>Header</h1> -->
-    <nav>
-
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-
-      <label for="" class="logo">Dapo Adedire's Blog</label>
-      <ul>
-        <li><a href="{% url 'blog-home' %}">Home</a></li>
-        <li><a href="{% url 'blog-about' %}">About</a></li>
-        <li><a href="{% url 'blog-contact' %}">Contact</a></li>
-        <li><a href="{% url 'blog-home' %}">Login</a></li>
-
-    </nav>
-  </header>
-
-
-  <main>
-
-    <section class="alpha">
-      {% block content %}
+      {% block content %} 
+      
       {% endblock content %}
-    </section>
-
-    <section class="beta">
-      <h3>You might also like these</h3>
-      <p>Blog 1</p>
-      <p>Blog 2</p>
-      <p>Blog 3</p>
-      <p>Blog 4</p>
-        
-    </section>
-  </main>
-
-
-  <footer>
-    <!-- <h3>Footer</h3> -->
-    <div class="social">
-      <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.github.com/"><i class="fab fa-github"></i></a>
-
-    </div>
-
-    <ul class="list">
-      <li><a href="{% url 'blog-home' %}">Home</a></li>
-      <li><a href="{% url 'blog-about' %}">About</a></li>
-      <li><a href="{% url 'blog-contact' %}">Contact</a></li>
-      <li><a href="#">Terms and Services</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-    </ul>
-    <p class="copyright">
-      &copy; {% now 'Y' %}, Dapo Adedire's Blog<br>
-      All rights reserved.
-    </p>
-  </footer>
-  <script src="{% static 'js/blog.js' }"></script>
-</body>
-
+      
+      <aside>
+        <div class="about">
+          <div class="avatar">
+            <img src="{% static 'images/dapo-avatar.jpg' %}" alt="avatar" />
+          </div>
+          <div class="intro">
+            <p>
+              Engineering Student.<br />Open Source Contributor.<br />Full Stack
+              Web Developer.
+            </p>
+          </div>
+          <div class="socials">
+            <ul>
+              <li>
+                <a href="https://twitter.com/dapo_adedire" target="_blank"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/dapoadedire/" target="_blank"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.github.com/dapoadedire" target="_blank"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/dapo_adedire/" target="_blank"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <footer>
+     
+    <footer>
+      <div>
+        <p>
+          &copy; {% now 'Y' %} Dapo Adedire. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,8 +1,14 @@
-{% extends 'base.html' %}
-
-{% block title %}
+{% extends 'base.html' %} {% block title %}
 <title>About</title>
-{% endblock title %}
+{% endblock title %} 
+
+{% block nav %}
+<ul>
+  <li><a href="{% url 'blog-home' %}">Home</a></li>
+  <li><a class="active" href="{% url 'blog-about' %}">About</a></li>
+  <li><a href="{% url 'blog-contact' %}">Contact</a></li>
+</ul>
+{% endblock nav %}
 
 {% block content %}
 <h1>About</h1>
