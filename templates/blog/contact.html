@@ -16,6 +16,32 @@
 
 
 {% block content %}
-<h1>Contact</h1>
+<section class="contact">
+    <div class="form contact-us">
+        <h2>Get in touch</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quo consequatur repellendus debitis. Eum, blanditiis iusto nulla vel quisquam nobis commodi libero dolorum, itaque ratione repudiandae, aliquid ex molestias repellat.
+        Voluptate, veritatis ducimus distinctio perferendis nam dolores similique a at saepe! At voluptate esse labore qui natus temporibus similique ullam, earum optio necessitatibus, veritatis minus cumque molestiae? Temporibus, nam quam.</p>
+        <form method="post">
+
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <br>
+            <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br>
+            <br>
+            <label for="message">Message:</label>
+            <br>
+            <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+            <br>
+            <br>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+
+    </div>
+</section>
 
 {% endblock content %}

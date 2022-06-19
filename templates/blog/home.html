@@ -10,6 +10,8 @@
   <li><a class="active" href="{% url 'blog-home' %}">Home</a></li>
   <li><a href="{% url 'blog-about' %}">About</a></li>
   <li><a href="{% url 'blog-contact' %}">Contact</a></li>
+  <li><a href="{% url 'blog-detail' %}">Detail</a></li>
+
 </ul>
 {% endblock nav %} {% block content %}
 <section class="home">
@@ -19,7 +21,7 @@
     </div>
 
     <div class="blog-intro">
-      <h2>Adding Ckeditor to Django Blog</h2>
+      <h2>Beautiful CSS box-shadow examples</h2>
       <p>JUNE 25, 2020 | DJANGO</p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
@@ -90,7 +92,7 @@
      
   </div> 
   <div class="post-next">
-    <div id="app" class="container">  
+    <!-- <div id="app" class="container">  
         <ul class="page">
             <li class="page__btn"><span class="material-icons">chevron_left</span></li>
             <li class="page__numbers"> 1</li>
@@ -103,7 +105,7 @@
             <li class="page__numbers"> 10</li>
             <li class="page__btn"><span class="material-icons">chevron_right</span></li>
           </ul>
-        </div>
+        </div> -->
       </div>
 </section>
 {% endblock content %}

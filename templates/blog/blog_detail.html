@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+<title>Home</title>
+{% endblock title %} {% block nav %}
+<ul>
+  <li><a class="active" href="{% url 'blog-home' %}">Home</a></li>
+  <li><a href="{% url 'blog-about' %}">About</a></li>
+  <li><a href="{% url 'blog-contact' %}">Contact</a></li>
+</ul>
+{% endblock nav %} {% block content %}
+<section class="blog-detail">
+    <div class="blog-detail-image">
+        <img src="{% static 'images/blog-1.jpg' %}" alt="avatar" />
+    </div>
+    <div class="blog-detail-content">
+        <h2>Adding Ckeditor to Django Blog</h2>
+      <p>JUNE 25, 2020 | DJANGO</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dicta veritatis eligendi reiciendis accusamus necessitatibus aliquid labore temporibus id et libero quos quod cupiditate tempora totam repellendus voluptatum, voluptatibus magnam.
+      Inventore animi dicta suscipit a tempore eveniet, accusamus pariatur amet, porro quas reprehenderit maiores alias quos! Sint, unde, dolorem facere corporis quis soluta molestias repellendus provident, ut placeat laudantium quia!
+      Voluptatem impedit officiis modi labore dolorem aspernatur expedita nobis ex porro nemo quod rem repudiandae dolore, saepe possimus maiores dolor est, sequi aliquam tenetur perspiciatis iste praesentium laudantium fuga? Dolorum!
+      Voluptatum ad libero debitis? Quibusdam dicta rerum cupiditate porro nam magni, blanditiis fuga, deleniti ullam nihil commodi consequuntur sit! Eius eveniet architecto totam, officia mollitia beatae alias minima vel suscipit.
+      Cupiditate natus, repellat nostrum dicta qui sunt maxime quibusdam dolore, necessitatibus labore eum, odit esse obcaecati molestias! Impedit, eveniet, voluptatem dolorum, quo dignissimos harum aperiam expedita porro ducimus reiciendis tenetur.
+      Quod quam aliquid repudiandae quaerat! Excepturi, numquam recusandae praesentium, facere, unde fugit eaque quo sunt in voluptatem vitae itaque dolorum deserunt expedita laudantium ut asperiores tempore ab debitis id nemo!
+      Fuga consequuntur id esse aliquam expedita cum non? Officia, optio molestiae perspiciatis eius sapiente quidem aspernatur reiciendis quae! Possimus tempore minus architecto impedit adipisci ducimus aperiam! Ex illum nemo optio.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia dicta veritatis eligendi reiciendis accusamus necessitatibus aliquid labore temporibus id et libero quos quod cupiditate tempora totam repellendus voluptatum, voluptatibus magnam.
+      Inventore animi dicta suscipit a tempore eveniet, accusamus pariatur amet, porro quas reprehenderit maiores alias quos! Sint, unde, dolorem facere corporis quis soluta molestias repellendus provident, ut placeat laudantium quia!
+      Voluptatem impedit officiis modi labore dolorem aspernatur expedita nobis ex porro nemo quod rem repudiandae dolore, saepe possimus maiores dolor est, sequi aliquam tenetur perspiciatis iste praesentium laudantium fuga? Dolorum!
+      Voluptatum ad libero debitis? Quibusdam dicta rerum cupiditate porro nam magni, blanditiis fuga, deleniti ullam nihil commodi consequuntur sit! Eius eveniet architecto totam, officia mollitia beatae alias minima vel suscipit.
+      Cupiditate natus, repellat nostrum dicta qui sunt maxime quibusdam dolore, necessitatibus labore eum, odit esse obcaecati molestias! Impedit, eveniet, voluptatem dolorum, quo dignissimos harum aperiam expedita porro ducimus reiciendis tenetur.
+      Quod quam aliquid repudiandae quaerat! Excepturi, numquam recusandae praesentium, facere, unde fugit eaque quo sunt in voluptatem vitae itaque dolorum deserunt expedita laudantium ut asperiores tempore ab debitis id nemo!
+      Fuga consequuntur id esse aliquam expedita cum non? Officia, optio molestiae perspiciatis eius sapiente quidem aspernatur reiciendis quae! Possimus tempore minus architecto impedit adipisci ducimus aperiam! Ex illum nemo optio.
+    
+    </p>
+    </div>
+    <div class="share-like">
+      
+    </div>
+</section>
+{% endblock content %}

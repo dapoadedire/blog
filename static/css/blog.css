@@ -17,11 +17,11 @@ body{
         "header"
         "main"
         "footer";
-        background-color: white;
+        background-color: #f0f0f0;
 }
 
 header{
-    background-color: #f7f6ec;
+    background-color: white;
     border-bottom: 2px solid rgb(255, 255, 255, 0.6);
     grid-area: header;
     border-bottom: 1px solid rgba(0, 0, 0, 0.096);
@@ -44,16 +44,16 @@ nav{
     list-style: none;
     line-height: 80px;
 }
-label{
+header label{
     height: 100%;
     line-height: 80px;
     float: left;
     font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 25px;
 }
 
-label a{
+header label a{
     color: #000;
     text-decoration: none;
 }
@@ -62,6 +62,7 @@ header div nav li a{
     text-decoration: none;
     color: rgba(0, 0, 0, 0.6);
     font-size: 1rem;
+    font-weight: 400;
 }
 
 .active{
@@ -77,12 +78,143 @@ main{
     gap: 25px;
     
     grid-template-areas: 
-        "home aside";
+        "section aside";
 
 }
 
+section{
+    grid-area: section;
+}
+
+
+section.blog-detail{
+    background-color: white;
+    display: grid;
+    grid-template-rows: 320px auto 100px;
+    gap: 25px;
+    grid-template-areas: 
+        "image"
+        "content"
+        "share-like";
+    border: 2px solid rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+
+section.blog-detail .blog-detail-image{
+    grid-area: image;
+}
+section.blog-detail .blog-detail-image img{
+    width: 100%;
+    height: 100%;
+
+}
+section.blog-detail .share-like{
+    grid-area: share-like;
+
+}
+
+section.blog-detail .blog-detail-content{
+    padding: 2rem;
+    grid-area: content;
+}
+section.blog-detail .blog-detail-content h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+section.blog-detail .blog-detail-content p:first-of-type{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.6);
+
+    
+}
+
+section.blog-detail .blog-detail-content p:last-of-type{
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+
+
+
+section.contact, section.about{
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+section.contact h2, section.about h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+section.about h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+
+section.contact p, section.about p{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+section.contact label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+section.contact input, section.contact textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    height: 50px;
+}
+
+
+section.contact textarea{
+    height: 200px;
+}
+
+section input#submit {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 500ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
 section.home{
-    grid-area: home;
     display: grid;
     grid-template-rows: repeat(5, 1fr);
     row-gap: 25px;
@@ -91,7 +223,7 @@ section.home{
 .post{
     padding: 1.5rem;
     height: 240px;
-    background-color: #f7f6ec;
+    background-color: white;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.096);
     display: grid;
@@ -99,6 +231,7 @@ section.home{
     grid-template-areas: 
         "blog-image blog-intro";
     column-gap: 10px;
+  
 }
 
 .blog-image{
@@ -150,6 +283,7 @@ aside{
     border-radius: 50%;
     display: block;
     margin: 30px auto;
+    border: 2px solid rgba(0, 0, 0, 0.096);
 }
 
 .intro p{
@@ -162,10 +296,11 @@ aside{
 }
 
 aside .about{
-    background-color: #f7f6ec;
+    background-color: white;
     height: auto;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.096);
+
 }
 
 .socials{
@@ -186,7 +321,7 @@ aside .about{
 }
 footer{
     grid-area: footer;
-    background-color: #f7f6ec;
+    background-color: #f0f0f0;
     border-top: 2px solid rgb(255, 255, 255, 0.6);
 }
 
@@ -210,3 +345,5 @@ footer div{
 
 
 /* PAGINATION */
+
+

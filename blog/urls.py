@@ -4,4 +4,7 @@ urlpatterns = [
     path('', views.home, name='blog-home'),
     path('about/', views.about, name='blog-about'),
     path('contact/', views.contact, name='blog-contact'),
+    path('detail/', views.blog_detail, name='blog-detail'),
+    # path('blog/<int:blog_id>/', views.blog_detail, name='blog-detail'),
+
 ]
