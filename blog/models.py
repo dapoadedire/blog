@@ -13,7 +13,8 @@ class Post(models.Model):
 
     def summary(self):
         return self.content[:100]
-    def str(self):
-        return f"self.title | self.author.username"
+
+    def __str__(self):
+        return self.title | self.author.username
 
     

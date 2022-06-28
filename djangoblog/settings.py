@@ -64,7 +64,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
      "debug_toolbar.middleware.DebugToolbarMiddleware",
+     'kolo.middleware.KoloMiddleware',
 ]
 
 ROOT_URLCONF = 'djangoblog.urls'
@@ -123,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Lagos/Nigeria'
+TIME_ZONE = 'Africa/Lagos'
 
 USE_I18N = True
 
