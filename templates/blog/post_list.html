@@ -1,9 +1,4 @@
-{% extends 'base.html' %}
-
-{% load static %}
-
-
-{% block title %}
+{% extends 'base.html' %} {% load static %} {% block title %}
 <title>Home</title>
 {% endblock title %} {% block nav %}
 <ul>
@@ -11,117 +6,28 @@
   <li><a href="{% url 'blog:about' %}">About</a></li>
   <li><a href="{% url 'blog:contact' %}">Contact</a></li>
   <li><a href="{% url 'blog:create' %}">Post New</a></li>
-
 </ul>
 {% endblock nav %} {% block content %}
 <section class="home">
-  {% comment %} <div class="post">
+  {% for post in post_list%}
+  <div class="post">
     <div class="post-image">
-      <img src="{% static 'images/post-1.jpg' %}" alt="avatar" />
+      <img src="{{ post.image.url}}" alt="{{ post.title }}" />
     </div>
 
     <div class="post-intro">
-      <h2>Beautiful CSS box-shadow examples</h2>
-      <p>JUNE 25, 2020 | DJANGO</p>
+      <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
+      <p>{{post.date_published|date:"M, d, Y"}} | Django</p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-        quidem, dolorem, accusamus, quas, quis, dolore, molestias, eveniet,
-        eius.
+        {{post.content |truncatewords:40 | safe}}<a
+          href="{{post.get_absolute_url}}"
+          >read more.</a
+        >
       </p>
     </div>
-  </div> {% endcomment %}
-  <div class="post">
-    <div class="post-image">
-        <img src="{% static 'images/blog-2.jpg' %}" alt="avatar" />
-      </div>
-  
-      <div class="post-intro">
-        <h2>Adding Ckeditor to Django Blog</h2>
-        <p>JUNE 25, 2020 | DJANGO</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-          quidem, dolorem, accusamus, quas, quis, dolore, molestias, eveniet,
-          eius.
-        </p>
-      </div>
   </div>
-  {% comment %} </div>
-  <div class="blog">
-    <div class="post-image">
-        <img src="{% static 'images/post-2.jpg' %}" alt="avatar" />
-      </div>
-  
-      <div class="post-intro">
-        <h2>Adding Ckeditor to Django post</h2>
-        <p>JUNE 25, 2020 | DJANGO</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-          quidem, dolorem, accusamus, quas, quis, dolore, molestias, eveniet,
-          eius.
-        </p>
-      </div>
-  </div>
-  <div class="blog">
-    <div class="post-image">
-        <img src="{% static 'images/post-3.jpg' %}" alt="avatar" />
-      </div>
-  
-      <div class="post-intro">
-        <h2>Lorem unt id soluta mollitia optio asperiores maxime, quidem v</h2>
-        <p>JUNE 25, 2020 | DJANGO</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-          quidem, dolorem, accusamus, quas, quis, dolore, molestias, eveniet,
-          eius.
-        </p>
-      </div>
-  </div>
-  <div class="blog">
-    <div class="post-image">
-        <img src="{% static 'images/post-4.jpg' %}" alt="avatar" />
-      </div>
-  
-      <div class="post-intro">
-        <h2>Adding Ckeditor to Django post</h2>
-        <p>JUNE 25, 2020 | DJANGO</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-          quidem, dolorem, accusamus, quas, quis, dolore, molestias, eveniet,
-          eius.
-        </p>
-      </div>
-  </div>
-  <div class="blog">
-    <div class="post-image">
-        <img src="{% static 'images/post-5.jpg' %}" alt="avatar" />
-      </div>
-  
-      <div class="post-intro">
-        <h2>Adding Ckeditor to Django post</h2>
-        <p>JUNE 25, 2020 | DJANGO</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
-          quidem, dolorem, accusamus, quas, quis, dolore, molestias, eveniet,
-          eius.
-        </p>
-      </div>
-      {% endcomment %}
-  {% comment %} </div>  {% endcomment %}
-  <div class="post-next">
-    <!-- <div id="app" class="container">  
-        <ul class="page">
-            <li class="page__btn"><span class="material-icons">chevron_left</span></li>
-            <li class="page__numbers"> 1</li>
-            <li class="page__numbers active">2</li>
-            <li class="page__numbers">3</li>
-            <li class="page__numbers">4</li>
-            <li class="page__numbers">5</li>
-            <li class="page__numbers">6</li>
-            <li class="page__dots">...</li>
-            <li class="page__numbers"> 10</li>
-            <li class="page__btn"><span class="material-icons">chevron_right</span></li>
-          </ul>
-        </div> -->
-      </div>
+  {% endfor %}
+
+  <div class="post-pagination"></div>
 </section>
 {% endblock content %}

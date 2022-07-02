@@ -13,19 +13,20 @@ from blog.models import Post
 
 class PostListView(ListView):
     model = Post
-
+    context_object_name = "post_list"
     def get_queryset(self):
         return super().get_queryset().filter(status="published")
 
+
+class PostDetailView(DetailView):
+    model = Post
+    context_object_name = "post"
 
 class PostCreateView(CreateView):
     model = Post
     fields = "__all__"
     success_url = reverse_lazy("blog:home")
 
-
-class PostDetailView(DetailView):
-    model = Post
 
 
 class PostUpdateView(UpdateView):

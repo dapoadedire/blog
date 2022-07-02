@@ -3,6 +3,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.utils import timezone
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
@@ -18,17 +19,18 @@ class Post(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     date_published = models.DateTimeField(default=timezone.now)
-    image = models.ImageField(upload_to='images/', blank=True)
+    image = models.ImageField(upload_to='images/', default='images/default.jpg', blank=True)
     status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default="draft"
     )
     slug = models.SlugField(max_length=50, unique=True, editable=False)
+    tags = TaggableManager()
 
     def summary(self):
         return self.content[:100]
 
     def __str__(self):
-        return self.title | self.author.username
+        return f"{self.title } by  { self.author.username}"
 
     class Meta:
         ordering = ("-date_published",)
