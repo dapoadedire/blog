@@ -139,7 +139,7 @@ section.blog-detail .blog-detail-content p:last-of-type{
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 
@@ -168,11 +168,13 @@ section.about h2{
 
 
 
+
+
 section.contact p, section.about p{
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 section.contact label{
@@ -205,13 +207,33 @@ section input#submit {
     margin-top: 30px;
     border: 1px solid rgba(0, 0, 0, 0.096);
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
+    background-color: #a3a3a3;
+    color: #000;
     font-weight: bolder;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
     transition: all 500ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+section.about button{
+    background-color: #f0f0f0;
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 40%;
+    height: 50px;
+}
+
+section.about button:hover, section input#submit:hover{
+    background-color: #000;
+    color: white;
 }
 
 section.home{
@@ -222,7 +244,7 @@ section.home{
 }
 .post{
     padding: 1.5rem;
-    height: 240px;
+    height: 260px;
     background-color: white;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.096);
@@ -236,13 +258,15 @@ section.home{
 
 .post-image{
     grid-area: post-image;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
+    
 }
 
 .post-image img{
     width: 100%;
     height: 100%;
-    
 }
 
 .post-intro{
@@ -305,10 +329,11 @@ aside .about{
 }
 
 .socials{
-    width: 90%;
-    margin: 20px auto;
+    width: 100%;
+    margin: auto;
     margin-top: 40px;
     text-align: center;
+    
 }
 .socials ul li{
     display: inline-block;
@@ -349,3 +374,7 @@ footer div{
 /* PAGINATION */
 
 
+.disqus{
+    border-top: 2px solid gainsboro;
+    padding-top: 20px;
+}
