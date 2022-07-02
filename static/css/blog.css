@@ -252,7 +252,7 @@ section.home{
 
 .post-intro h2{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.6);
 }
@@ -338,8 +338,9 @@ footer div{
 
 
 .post-pagination{
-    background-color: green;
-    height: 100px;
+    background-color: white;
+    border-radius: 5px;
+    height: 80px;
     width: 100%;
 }
 

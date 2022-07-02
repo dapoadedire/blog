@@ -19,15 +19,46 @@
       <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
       <p>{{post.date_published|date:"M, d, Y"}} | Django</p>
       <p>
-        {{post.content |truncatewords:40 | safe}}<a
+        {{post.content |truncatewords:30 | safe}}<a
           href="{{post.get_absolute_url}}"
           >read more.</a
         >
       </p>
     </div>
   </div>
-  {% endfor %}
+  {% endfor %} {% if is_paginated %}
+  <div class="post-pagination">
 
-  <div class="post-pagination"></div>
+ <nav aria-label="Page navigation conatiner"></nav>
+    <ul class="pagination pagination-lg justify-content-center">
+      {% if page_obj.has_previous %}
+      <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}" class="page-link" >&laquo;</a></li>
+      {% else %}
+
+
+
+      <li class="disabled" class="page-item"><span class="page-link">&laquo;</span></li>
+      {% endif %} {% for i in paginator.page_range %} {% if page_obj.number == i%}
+      <li  aria-current="page" class="page-item active">
+        <span class="page-link">{{ i }} <span class="sr-only"  >(current)</span></span>
+      </li>
+      {% else %}
+      <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+      {% endif %} {% endfor %} {% if page_obj.has_next %}
+      <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link">&raquo;</a></li>
+      {% else %}
+      <li class="disabled" class="page-item"><span class="page-link">&raquo;</span></li>
+      {% endif %}
+    </ul> 
+
+
+    </ul>
+    
+
+
+
+
+  </div>
+  {% endif %}
 </section>
 {% endblock content %}
