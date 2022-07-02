@@ -15,7 +15,7 @@
 </ul>
 {% endblock nav %} {% block content %}
 <section class="home">
-  <div class="post">
+  {% comment %} <div class="post">
     <div class="post-image">
       <img src="{% static 'images/post-1.jpg' %}" alt="avatar" />
     </div>
@@ -29,8 +29,24 @@
         eius.
       </p>
     </div>
-  </div>
+  </div> {% endcomment %}
   <div class="post">
+    <div class="post-image">
+        <img src="{% static 'images/blog-2.jpg' %}" alt="avatar" />
+      </div>
+  
+      <div class="post-intro">
+        <h2>Adding Ckeditor to Django Blog</h2>
+        <p>JUNE 25, 2020 | DJANGO</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam,
+          quidem, dolorem, accusamus, quas, quis, dolore, molestias, eveniet,
+          eius.
+        </p>
+      </div>
+  </div>
+  {% comment %} </div>
+  <div class="blog">
     <div class="post-image">
         <img src="{% static 'images/post-2.jpg' %}" alt="avatar" />
       </div>
@@ -45,7 +61,7 @@
         </p>
       </div>
   </div>
-  <div class="post">
+  <div class="blog">
     <div class="post-image">
         <img src="{% static 'images/post-3.jpg' %}" alt="avatar" />
       </div>
@@ -60,7 +76,7 @@
         </p>
       </div>
   </div>
-  <div class="post">
+  <div class="blog">
     <div class="post-image">
         <img src="{% static 'images/post-4.jpg' %}" alt="avatar" />
       </div>
@@ -75,7 +91,7 @@
         </p>
       </div>
   </div>
-  <div class="post">
+  <div class="blog">
     <div class="post-image">
         <img src="{% static 'images/post-5.jpg' %}" alt="avatar" />
       </div>
@@ -89,8 +105,8 @@
           eius.
         </p>
       </div>
-     
-  </div> 
+      {% endcomment %}
+  {% comment %} </div>  {% endcomment %}
   <div class="post-next">
     <!-- <div id="app" class="container">  
         <ul class="page">

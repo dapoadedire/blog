@@ -229,34 +229,34 @@ section.home{
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-areas: 
-        "blog-image blog-intro";
+        "post-image post-intro";
     column-gap: 10px;
   
 }
 
-.blog-image{
-    grid-area: blog-image;
+.post-image{
+    grid-area: post-image;
 }
 
-.blog-image img{
+.post-image img{
     width: 100%;
     height: 100%;
     border-radius: 5px;
 }
 
-.blog-intro{
-    grid-area: blog-intro;
+.post-intro{
+    grid-area: post-intro;
     padding-left: 15px;
 }
 
-.blog-intro h2{
+.post-intro h2{
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.6);
 }
 
-.blog-intro p:first-of-type{
+.post-intro p:first-of-type{
     font-family: 'Poppins', sans-serif;
     font-size: 0.7rem;
     padding-top: 10px;
@@ -264,7 +264,7 @@ section.home{
     color: rgba(0, 0, 0, 0.6);
 }
 
-.blog-intro p{
+.post-intro p{
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     color: rgba(0, 0, 0, 0.6);
@@ -337,7 +337,7 @@ footer div{
 
 
 .post-next{
-    background-color: red;
+    background-color: green;
     height: 100px;
     width: 100%;
 }

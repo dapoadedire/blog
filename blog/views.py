@@ -40,7 +40,9 @@ class PostDeleteView(DeleteView):
 
 
 class AboutView(View):
-    template_name = "blog/about.html"
+    def get(self, request):
+        return render(request, "blog/about.html")
 
 class ContactView(View):
-    template_name = "blog/contact.html"
+    def get(self, request):
+        return render(request, "blog/contact.html")
