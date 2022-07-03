@@ -15,20 +15,20 @@ class PostListView(ListView):
     model = Post
     context_object_name = "post_list"
     paginate_by: int = 3
+
     def get_queryset(self):
         return super().get_queryset().filter(status="published")
-
 
 
 class PostDetailView(DetailView):
     model = Post
     context_object_name = "post"
 
+
 class PostCreateView(CreateView):
     model = Post
     fields = "__all__"
     success_url = reverse_lazy("blog:home")
-
 
 
 class PostUpdateView(UpdateView):
@@ -45,6 +45,7 @@ class PostDeleteView(DeleteView):
 class AboutView(View):
     def get(self, request):
         return render(request, "blog/about.html")
+
 
 class ContactView(View):
     def get(self, request):

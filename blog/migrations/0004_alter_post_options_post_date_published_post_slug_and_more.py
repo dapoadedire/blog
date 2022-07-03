@@ -7,28 +7,34 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0003_rename_created_at_post_date_posted_and_more'),
+        ("blog", "0003_rename_created_at_post_date_posted_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='post',
-            options={'ordering': ('-date_published',)},
+            name="post",
+            options={"ordering": ("-date_published",)},
         ),
         migrations.AddField(
-            model_name='post',
-            name='date_published',
+            model_name="post",
+            name="date_published",
             field=models.DateTimeField(default=django.utils.timezone.now),
         ),
         migrations.AddField(
-            model_name='post',
-            name='slug',
-            field=models.SlugField(default=django.utils.timezone.now, editable=False, unique=True),
+            model_name="post",
+            name="slug",
+            field=models.SlugField(
+                default=django.utils.timezone.now, editable=False, unique=True
+            ),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='post',
-            name='status',
-            field=models.CharField(choices=[('draft', 'Draft'), ('published', 'Published')], default='draft', max_length=10),
+            model_name="post",
+            name="status",
+            field=models.CharField(
+                choices=[("draft", "Draft"), ("published", "Published")],
+                default="draft",
+                max_length=10,
+            ),
         ),
     ]
