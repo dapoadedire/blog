@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",  # new
     "ckeditor",  # add safe tag later
     "taggit",
+     'accounts',
 ]
 
 MIDDLEWARE = [
@@ -147,7 +148,10 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
