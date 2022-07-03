@@ -3,7 +3,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.utils import timezone
-from taggit.managers import TaggableManager
+
 from django.conf import settings
 User = settings.AUTH_USER_MODEL
 # Create your models here.
@@ -22,7 +22,7 @@ class Post(models.Model):
     )
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="draft")
     slug = models.SlugField(max_length=50, unique=True, editable=False)
-    tags = TaggableManager()
+   
 
     def summary(self):
         return self.content[:100]
