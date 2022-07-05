@@ -31,12 +31,61 @@
 }
 
 @media all and (max-width: 480px) {
-  body {
-    background-color: yellow;
+  .navbar {
+    flex-direction: column;
+  }
+  .menu {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
   }
 }
 
-body {
-  width: 100%;
-  background-color: black;
+.menu {
+  display: none;
+}
+
+.navbar {
+  background-color: #000;
+  color: white;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+  padding: 0 4rem;
+}
+
+.nav-list {
+  list-style-type: none;
+}
+
+.nav-list li {
+  display: inline-block;
+  line-height: 50px;
+  padding: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar a:hover {
+  color: bisque;
+}
+
+.logo {
+  height: 45px;
+  filter: invert(100%);
+}
+
+.menu-line {
+  background-color: bisque;
+  width: 25px;
+  height: 4px;
+  margin-bottom: 4px;
+  border-radius: 8px;
 }

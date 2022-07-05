@@ -19,14 +19,27 @@
 
 <body>
   <header>
-    <div>
-      <label for="logo"><a href="{% url 'blog:home' %}">Dapo Adedire 🤓</a> </label>
-      <nav>
+    <nav class="navbar">
+      <div>
+        
+         <a href="{% url 'blog:home' %}">
+          
+          <img class="logo" src="{% static 'images/logo.png' %}" alt="logo" />
+         </a>
+         
+      </div>
+      <ul class="nav-list">
         {% block nav %}
-        {% endblock nav %}
+      {% endblock nav %}
+      </ul>
+      <div class="menu">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+      
+    </nav>
 
-      </nav>
-    </div>
   </header>
   <main>
 
@@ -37,10 +50,16 @@
 
   </main>
   <footer>
-    <div>
-      <p>
-        &copy; {% now 'Y' %} Dapo Adedire. All rights reserved.
-      </p>
+    <div class="container">
+      <div class="ftr">
+        <h3>About</h3>
+        <ul>
+          <li>
+            <a href="#"></a>
+          </li>
+        </ul>
+
+      </div>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
