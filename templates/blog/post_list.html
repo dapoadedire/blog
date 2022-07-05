@@ -5,20 +5,7 @@
   <li><a class="active" href="{% url 'blog:home' %}">Home</a></li>
   <li><a href="{% url 'blog:about' %}">About</a></li>
   <li><a href="{% url 'blog:contact' %}">Contact</a></li>
-  {% if user.is_superuser %}
   <li><a href="{% url 'blog:create' %}">Post New</a></li>
-  {% endif %}
-  {% if user.is_authenticated %}
- 
-  <li><a href="{% url 'logout' %}">Log Out</a></li>
-  <li><a href="{% url 'password_reset' %}">Password Reset</a></li>
-  <li><a href="{% url 'password_change' %}">Password Change</a></li>
- 
-{% else %}
-  
-  <li><a href="{% url 'signup' %}">Sign Up</a></li>
-  <li><a href="{% url 'login' %}">Log In</a></li>
-{% endif %}
  
 </ul>
 {% endblock nav %} {% block content %}
