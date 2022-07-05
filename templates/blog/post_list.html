@@ -1,21 +1,31 @@
-{% extends 'base.html' %} {% load static %} {% block title %}
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% block title %}
 <title>Home</title>
-{% endblock title %} {% block nav %}
+{% endblock title %} 
+
+
+{% block nav %}
 <ul>
   <li><a class="active" href="{% url 'blog:home' %}">Home</a></li>
   <li><a href="{% url 'blog:about' %}">About</a></li>
   <li><a href="{% url 'blog:contact' %}">Contact</a></li>
+  {% if user.is_superuser %}
   <li><a href="{% url 'blog:create' %}">Post New</a></li>
- 
+  {% endif %}
 </ul>
-{% endblock nav %} {% block content %}
+{% endblock nav %} 
+
+
+
+
+
+{% block content %}
 <section class="home">
   {% for post in post_list%}
   <div class="post">
-    <div class="post-image">
-      <img src="{{ post.image.url}}" alt="{{ post.title }}" />
-    </div>
-
     <div class="post-intro">
       <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
       <p>{{post.date_published|date:"M, d, Y"}} | Django</p>
@@ -27,11 +37,14 @@
       </p>
     </div>
   </div>
-  {% endfor %} {% if is_paginated %}
+  {% endfor %} 
+  
+  
+  {% if is_paginated %}
   <div class="post-pagination">
 
- <nav aria-label="Page navigation conatiner"></nav>
-    <ul class="pagination pagination-lg justify-content-center">
+     <nav aria-label="Page navigation conatiner"></nav>
+     <ul class="pagination pagination-lg justify-content-center">
       {% if page_obj.has_previous %}
       <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}" class="page-link" >&laquo;</a></li>
       {% else %}
@@ -50,15 +63,7 @@
       {% else %}
       <li class="disabled" class="page-item"><span class="page-link">&raquo;</span></li>
       {% endif %}
-    </ul> 
-
-
-    </ul>
-    
-
-
-
-
+      </ul> 
   </div>
   {% endif %}
 </section>

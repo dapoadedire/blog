@@ -4,7 +4,7 @@ from django.views.generic import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from django.urls import reverse_lazy
@@ -16,10 +16,11 @@ from blog.models import Post
 class PostListView(ListView):
     model = Post
     context_object_name = "post_list"
-    paginate_by: int = 3
+    paginate_by: int = 6
 
     def get_queryset(self):
         return super().get_queryset().filter(status="published")
+
 
 
 class PostDetailView(DetailView):
@@ -27,9 +28,10 @@ class PostDetailView(DetailView):
     context_object_name = "post"
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = "__all__"
+    login_url = reverse_lazy("blog:home")
     success_url = reverse_lazy("blog:home")
 
 

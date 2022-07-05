@@ -1,380 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;800&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-
-body{
-    display: grid;
-    width: 100%;
-    grid-template-rows: 80px 1fr 50px;
-    row-gap: 25px;
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer";
-        background-color: #f0f0f0;
+@media all and (min-width: 1280px) {
+  body {
+    background-color: greenyellow;
+  }
 }
 
-header{
-    background-color: white;
-    border-bottom: 2px solid rgb(255, 255, 255, 0.6);
-    grid-area: header;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  body {
+    background-color: red;
+  }
 }
 
-header div{
-    width: 960px;
-    margin: 0 auto;
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-color: blue;
+  }
 }
 
-header div nav li{
-    display:inline;
-    margin-left: 15px;
-    font-family: 'Poppins', sans-serif;
+@media all and (min-width: 480px) and (max-width: 768px) {
+  body {
+    background-color: green;
+  }
 }
 
-nav{
-    height: 100%;
-    float:right;
-    list-style: none;
-    line-height: 80px;
-}
-header label{
-    height: 100%;
-    line-height: 80px;
-    float: left;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 25px;
+@media all and (max-width: 480px) {
+  body {
+    background-color: yellow;
+  }
 }
 
-header label a{
-    color: #000;
-    text-decoration: none;
-}
-
-header div nav li a{
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.active{
-    color: black;
-}
-main{
-    /* background-color: yellow; */
-    grid-area: main;
-    width: 960px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns:250px auto;
-    gap: 25px;
-    
-    grid-template-areas: 
-        "aside section";
-
-}
-
-section{
-    grid-area: section;
-}
-
-
-section.blog-detail{
-    background-color: white;
-    display: grid;
-    grid-template-rows: 320px auto 100px;
-    gap: 25px;
-    grid-template-areas: 
-        "image"
-        "content"
-        "share-like";
-    border: 2px solid rgba(0, 0, 0, 0.096);
-    border-radius: 5px;
-    overflow: hidden;
-
-}
-
-section.blog-detail .blog-detail-image{
-    grid-area: image;
-}
-section.blog-detail .blog-detail-image img{
-    width: 100%;
-    height: 100%;
-
-}
-section.blog-detail .share-like{
-    grid-area: share-like;
-
-}
-
-section.blog-detail .blog-detail-content{
-    padding: 2rem;
-    grid-area: content;
-}
-section.blog-detail .blog-detail-content h2{
-    font-family: 'Poppins', sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-section.blog-detail .blog-detail-content p:first-of-type{
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    color: rgba(0, 0, 0, 0.6);
-
-    
-}
-
-section.blog-detail .blog-detail-content p:last-of-type{
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    /* margin-bottom: 10px; */
-}
-
-
-
-
-section.contact, section.about{
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.096);
-    border-radius: 5px;
-    padding: 2rem;
-}
-
-section.contact h2, section.about h1{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-section.about h2{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-
-
-
-
-section.contact p, section.about p{
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-}
-
-section.contact label{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-}
-
-section.contact input, section.contact textarea{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.096);
-    border-radius: 5px;
-    font-family: 'Lato', sans-serif;
-    height: 50px;
-}
-
-
-section.contact textarea{
-    height: 200px;
-}
-
-section input#submit {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-top: 30px;
-    border: 1px solid rgba(0, 0, 0, 0.096);
-    border-radius: 5px;
-    background-color: #a3a3a3;
-    color: #000;
-    font-weight: bolder;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 500ms cubic-bezier(.23, 1, 0.32, 1);
-}
-
-section.about button{
-    background-color: #f0f0f0;
-    border: 1px solid rgba(0, 0, 0, 0.096);
-    border-radius: 5px;
-    padding: 0.5rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #000;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 40%;
-    height: 50px;
-}
-
-section.about button:hover, section input#submit:hover{
-    background-color: #000;
-    color: white;
-}
-
-section.home{
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    row-gap: 25px;
-   
-}
-.post{
-    padding: 1.5rem;
-    height: 260px;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.096);
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-areas: 
-        "post-image post-intro";
-    column-gap: 10px;
-  
-}
-
-.post-image{
-    grid-area: post-image;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    
-}
-
-.post-image img{
-    width: 100%;
-    height: 100%;
-}
-
-.post-intro{
-    grid-area: post-intro;
-    padding-left: 15px;
-}
-
-.post-intro h2{
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.6);
-}
-
-.post-intro p:first-of-type{
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.7rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: rgba(0, 0, 0, 0.6);
-}
-
-.post-intro p{
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.6);
-}
-
-aside{
-    grid-area: aside;
-}
-.avatar{
-    width: 100%;
-}
-
-.avatar img{
-    width: 160px;
-    height: auto;
-    border-radius: 50%;
-    display: block;
-    margin: 30px auto;
-    border: 2px solid rgba(0, 0, 0, 0.096);
-}
-
-.intro p{
-    color: rgba(0, 0, 0, 0.6);
-    font-family: 'Lato', sans-serif;
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-aside .about{
-    background-color: white;
-    height: auto;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.096);
-
-}
-
-.socials{
-    width: 100%;
-    margin: auto;
-    margin-top: 40px;
-    text-align: center;
-    
-}
-.socials ul li{
-    display: inline-block;
-}
-
-.socials ul li a{
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 1.5rem;
-    margin-left: 10px;
-}
-footer{
-    grid-area: footer;
-    background-color: #f0f0f0;
-    border-top: 2px solid rgb(255, 255, 255, 0.6);
-}
-
-footer div{
-    width: 960px;
-    margin: 0 auto;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    color: rgba(0, 0, 0, 0.6);
-    line-height: 50px;
-}
-
-
-.post-pagination{
-    background-color: white;
-    border-radius: 5px;
-    height: 80px;
-    width: 100%;
-}
-
-
-
-/* PAGINATION */
-
-
-.disqus{
-    border-top: 2px solid gainsboro;
-    padding-top: 20px;
+body {
+  width: 100%;
+  background-color: black;
 }

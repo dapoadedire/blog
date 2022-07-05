@@ -2,40 +2,37 @@
 
 {% load static %}
 
-
 {% block title %}
 <title>{{post.title}}</title>
-{% endblock title %} {% block nav %}
+{% endblock title %}
+
+
+{% block nav %}
+
 <ul>
   <li><a class="active" href="{% url 'blog:home' %}">Home</a></li>
   <li><a href="{% url 'blog:about' %}">About</a></li>
   <li><a href="{% url 'blog:contact' %}">Contact</a></li>
 </ul>
-{% endblock nav %} {% block content %}
-<section class="blog-detail">
-    <div class="blog-detail-image">
-        <img src="{{ post.image.url}}"  alt="{{ post.title }}" />
-    </div>
-    <div class="blog-detail-content">
-        <h2>{{post.title}}</h2>
+
+{% endblock nav %} 
+
+
+{% block content %}
+<section class="post-detail">
+    
+      <div class="title">
+<h2>{{post.title}}</h2>
       <p>{{post.date_published|date:"M, d, Y"}} | Django</p>
-      <p>{{post.content | safe}}</p>
+      </div>
+      <div class="content">
+        <p>{{post.content | safe}}</p>
+      </div>  
+      
+      
     
-   
-   
-    
-    <div class="disqus">
           <div id="disqus_thread"></div>
 <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
     (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
     s.src = 'https://dapoadedireblog-2.disqus.com/embed.js';
@@ -43,9 +40,8 @@
     (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</div>
+
+
 </section>
     
 

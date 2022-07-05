@@ -13,11 +13,8 @@ class Post(models.Model):
     content = RichTextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey( get_user_model(), on_delete=models.CASCADE)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     date_published = models.DateTimeField(default=timezone.now)
-    image = models.ImageField(
-        upload_to="images/", default="images/default.jpg", blank=True
-    )
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="draft")
     slug = models.SlugField(max_length=50, unique=True, editable=False)
    
