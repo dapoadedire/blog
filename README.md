@@ -1,6 +1,6 @@
 # Dapo Adedire Blog.
 
-![image](https://user-images.githubusercontent.com/95668340/176959639-9ffb0438-b329-44f1-ac75-96d8ed6f5d0e.png)
+
 
 
 ## How To Setup on Windows

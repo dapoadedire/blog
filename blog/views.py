@@ -16,7 +16,7 @@ from blog.models import Post
 class PostListView(ListView):
     model = Post
     context_object_name = "post_list"
-    paginate_by: int = 6
+    paginate_by: int = 5
 
     def get_queryset(self):
         return super().get_queryset().filter(status="published")
