@@ -1,12 +1,17 @@
 @import url(https://unpkg.com/normalize.css@8.0.1/normalize.css);
 /* @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700); */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
-body{
+
+
+
+
+.wrapper{
     max-width: 750px;
     margin: 0 auto;
     padding: 0 15px;
-    /* font-family: 'Roboto', sans-serif; */
+    width: 100%;
     font-family: 'Space Mono', monospace;
+    
 }
 
 header{
@@ -247,7 +252,6 @@ body > footer {
 /* Max-width of 750px */
 
 @media screen and (max-width: 750px){
-    footer{
-        flex-direction: column;
-    }
+    
+   
 }

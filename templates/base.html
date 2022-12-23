@@ -19,6 +19,8 @@
   </head>
 
   <body>
+<div class="wrapper">
+
 
 
    
@@ -41,7 +43,10 @@
     <main>{% block content %} {% endblock content %}</main>
     <footer>
       <p>
-        &copy; <span id="year"></span> Dapo Adedire. All rights reserved.
+        <!-- copyright icon by fontawesome-->
+        <i class="far fa-copyright"></i>
+
+        <span id="year"></span> Dapo Adedire.
       </p>
       <ul>
         <li>
@@ -61,6 +66,7 @@
         </li>
       </ul>
     </footer>
+  </div>
   
     <script>
       new Date().getFullYear()
