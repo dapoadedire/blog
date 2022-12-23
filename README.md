@@ -1,10 +1,8 @@
 # Dapo Adedire Blog.
 
-### Homepage
-
-![image](https://user-images.githubusercontent.com/95668340/209309529-1bb5183f-a147-4659-a731-2f86a7e8e144.png)
 
 
-### Services
 
-![image](https://user-images.githubusercontent.com/95668340/209309676-626659c7-6384-44a3-990a-56c22d62ae61.png)
+
+https://user-images.githubusercontent.com/95668340/209311399-e7e6a1fe-1ff8-4842-96c4-57b5cecb29b0.mp4
+
