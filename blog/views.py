@@ -22,35 +22,10 @@ class PostListView(ListView):
         return super().get_queryset().filter(status="published")
 
 
-
 class PostDetailView(DetailView):
     model = Post
     context_object_name = "post"
 
-
-class PostCreateView(LoginRequiredMixin, CreateView):
-    model = Post
-    fields = "__all__"
-    login_url = reverse_lazy("blog:home")
-    success_url = reverse_lazy("blog:home")
-
-
-class PostUpdateView(UpdateView):
-    model = Post
-    fields = "__all__"
-    success_url = reverse_lazy("blog:home")
-
-
-class PostDeleteView(DeleteView):
-    model = Post
-    success_url = reverse_lazy("blog:home")
-
-
-class AboutView(View):
+class ServicesView(View):
     def get(self, request):
-        return render(request, "blog/about.html")
-
-
-class ContactView(View):
-    def get(self, request):
-        return render(request, "blog/contact.html")
+        return render(request, "blog/services.html")

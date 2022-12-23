@@ -132,3 +132,5 @@ dmypy.json
 # Email
 
 /sent_emails
+
+/staticfiles

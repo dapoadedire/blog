@@ -1,89 +1,71 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
-  <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  {% block title %} {% endblock title %}
+    {% block title %} {% endblock title %}
+  </head>
 
-</head>
+  <body>
 
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="icon-container">
 
+   
+    <header>
+      <h2>
         <a href="{% url 'blog:home' %}">
-
-          <img class="logo" src="{% static 'images/logo.png' %}" alt="logo" />
+          Dapo Adedire
         </a>
-
+      </h2>
+      <div class="menu">
+        <i class="fas fa-bars" id="menu-bars"></i>
       </div>
-      <ul class="nav-list" id="nav-list">
-        {% block nav %}
-        {% endblock nav %}
+      <nav>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="{% url 'blog:home' %}">Home</a></li>
+          <li><a href="{% url 'blog:services' %}">Services</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>{% block content %} {% endblock content %}</main>
+    <footer>
+      <p>
+        &copy; <span id="year"></span> Dapo Adedire. All rights reserved.
+      </p>
+      <ul>
+        <li>
+          <a href="https://www.github.com/dapoadedire"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/dapo_adedire"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/dapoadedire/"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </li>
       </ul>
-      <div class="menu" id="toggleButton">
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-        <div class="menu-line"></div>
-      </div>
+    </footer>
+  
+    <script>
+      new Date().getFullYear()
+      document.getElementById("year").innerHTML = new Date().getFullYear();
 
-    </nav>
-
-  </header>
-  <main>
-
-    {% block content %}
-
-    {% endblock content %}
-
-
-  </main>
-  <footer class="sticky-footer">
-    
-
-     <div class="footer-container">
-      <ul class="socials">
-        <li>
-          <a href="https://www.twitter.com/">
-            <i class="fab fa-twitter-square"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.github.com/dapoadedire">
-            <i class="fab fa-github-square"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/dapoadedire">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-     </ul>
-
-     <p> Designed by Dapo Adedire</p>
-     </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
-  <script src="{% static 'js/script.js' %}"></script>
-  <script>
-    const toggleButton = document.getElementById('toggleButton');
-    const navList = document.getElementById('nav-list');
-
-    toggleButton.addEventListener('click', () => {
-      navList.classList.toggle('active');
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

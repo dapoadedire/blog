@@ -1,7 +1,0 @@
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_table }}
-  <button type="submit">Submit</button>
-  <button type="submit"  onclick="window.location='{% url 'blog:home' %}'; return false;">Cancel</button>
-</form>

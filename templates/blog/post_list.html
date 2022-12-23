@@ -7,57 +7,56 @@
 {% endblock title %}
 
 
-{% block nav %}
 
-<li><a class="active" href="{% url 'blog:home' %}">Home</a></li>
-<li><a href="{% url 'blog:about' %}">About</a></li>
-<li><a href="{% url 'blog:contact' %}">Contact</a></li>
-{% comment %} {% if user.is_superuser %}
-<li><a href="{% url 'blog:create' %}">Post New</a></li>
-{% endif %} {% endcomment %}
-
-{% endblock nav %}
 
 
 
 
 
 {% block content %}
-<div class="title">
-<h1>Welcome to the Blog</h1>
-</div>
 <section class="home">
-  {% for post in post_list%}
-  <div class="post">
-    <div class="post-intro">
-      
-        <h2><a href="{{post.get_absolute_url}}">{{post.title}}</a></h2>
+  <div class="intro">
+    <h3>
+      Hello, I'm Dapo Adedire.
+    </h3>
+    <p>
+      I'm a software developer and an engineering student. I write about software
+      development and other things.
+    </p>
+    <p>
+      You can find me on <a href="https://github.com/dapoadedire" target="_blank">GitHub</a>, <a href="https://twitter.com/dapo_adedire" target="_blank">Twitter</a>,
+      <a href="https://linkedin.com/in/dapoadedire" target="_blank">LinkedIn</a>, and
+      <a href="https://wa.me/2349038388723" target="_blank">WhatsApp</a>.
+    </p>
+    <p>
+      You can also check out my potforlio <a href="https://dapoadedire.tech" target="_blank">here</a>.
+    </p>
+  </div>
+  <div class="posts">
    
-         <p class="published">{{post.date_published|date:"M, d, Y"}}</p>
-      
-       <p> {{post.content |truncatewords:25 | safe}} <a href ="{{post.get_absolute_url}}">read more.</a></p>
-      
-     
-       
-          
-
+  {% for post in post_list%}
+  
+    <div class="post-intro">
+        <h3 class="post-title"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h3>
+         
+       <p class="post-subtitle"> {{post.sub_title}}</p>
+       <p class="post-date">{{post.date_published|date:"d M Y"}}</p>
       </p>
     </div>
-  </div>
+  
   {% endfor %}
+  </div>
 
 
 {% if is_paginated %}
 
   <div class="pagination">
     {% if page_obj.has_previous %}
-    <a href="?page={{ page_obj.previous_page_number }}">❮ &nbsp; Prev</a>
+    <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
     {% endif %}
     {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}">Next &nbsp; ❯</a>
+    <a href="?page={{ page_obj.next_page_number }}">Next</a>
     {% endif %}
-  
-
 </div>
 </section>
 {% endif %}

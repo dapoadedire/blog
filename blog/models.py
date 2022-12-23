@@ -4,12 +4,14 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth import get_user_model
+
 # Create your models here.
 
 
 class Post(models.Model):
     STATUS_CHOICES = (("draft", "Draft"), ("published", "Published"))
     title = models.CharField(max_length=200)
+    sub_title = models.CharField(max_length=200, null=True, blank=True)
     content = RichTextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
@@ -17,7 +19,6 @@ class Post(models.Model):
     date_published = models.DateTimeField(default=timezone.now)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="draft")
     slug = models.SlugField(max_length=50, unique=True, editable=False)
-   
 
     def summary(self):
         return self.content[:100]

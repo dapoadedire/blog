@@ -1,47 +1,54 @@
-{% extends 'base.html' %}
-
-{% load static %}
-
-{% block title %}
+{% extends 'base.html' %} {% load static %} {% block title %}
 <title>{{post.title}}</title>
-{% endblock title %}
-
-
-{% block nav %}
-
-
-  <li><a class="active" href="{% url 'blog:home' %}">Home</a></li>
-  <li><a href="{% url 'blog:about' %}">About</a></li>
-  <li><a href="{% url 'blog:contact' %}">Contact</a></li>
-
-{% endblock nav %} 
-
-
-{% block content %}
+{% endblock title %} {% block content %}
 <section class="post-detail">
-    
-      <div class="title">
-<h2>{{post.title}}</h2>
-      <p>{{post.date_published|date:"M, d, Y"}}</p>
-      </div>
-      <div class="content">
-        <p>{{post.content | safe}}</p>
-      </div>  
-      
-      
-    
-          <div id="disqus_thread"></div>
-<script>
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://dapoadedireblog-2.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
+  <div class="back-arrow">
+    <button>
+      <a href="{% url 'blog:home' %}">
+        <i class="fas fa-arrow-left"></i>
+      </a>
+    </button>
+  </div>
+  <div class="title">
+    <h2 class="post-title">{{post.title}}</h2>
+    <p class="author"><i class="fas fa-user"></i> :<span>Dapo Adedire</span></p>
+    <p class="post-date"><i class="fa-solid fa-calendar-days"></i> :{{post.date_published|date:"d M Y"}}</p>
+    <p class="share-article">
+      <i class="fas fa-share-nodes"></i> 
+      :<a
+        href="https://twitter.com/intent/tweet?text={{post.title}}&url={{post.get_absolute_url}}"
+        target="_blank"
+      ><i class="fab fa-twitter"></i>
+      </a>
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u={{post.get_absolute_url}}"
+        target="_blank"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/shareArticle?mini=true&url={{post.get_absolute_url}}&title={{post.title}}&summary={{post.sub_title}}&source={{post.get_absolute_url}}"
+        target="_blank"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </p>
+  </div>
+  <div class="post-content">
+    <p>{{post.content | safe}}</p>
+  </div>
+
+  <div id="disqus_thread"></div>
+  <script>
+    (function () {
+      // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://dapoadedireblog-2.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
     })();
-</script>
-
-
+  </script>
 </section>
-    
 
 {% endblock content %}
