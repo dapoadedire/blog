@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -19,59 +18,52 @@
   </head>
 
   <body>
-<div class="wrapper">
+    <div class="wrapper">
+      <header>
+        <h2>
+          <a href="{% url 'blog:home' %}"> Dapo Adedire </a>
+        </h2>
+        <div class="menu">
+          <i class="fas fa-bars" id="menu-bars"></i>
+        </div>
+        <nav>
+          <ul class="nav-list" id="nav-list">
+            <li><a href="{% url 'blog:home' %}">Home</a></li>
+            <li><a href="{% url 'blog:services' %}">Services</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>{% block content %} {% endblock content %}</main>
+      <footer>
+        <p>
+          <!-- copyright icon by fontawesome-->
+          <i class="far fa-copyright"></i>
 
-
-
-   
-    <header>
-      <h2>
-        <a href="{% url 'blog:home' %}">
-          Dapo Adedire
-        </a>
-      </h2>
-      <div class="menu">
-        <i class="fas fa-bars" id="menu-bars"></i>
-      </div>
-      <nav>
-        <ul class="nav-list" id="nav-list">
-          <li><a href="{% url 'blog:home' %}">Home</a></li>
-          <li><a href="{% url 'blog:services' %}">Services</a></li>
+          <span id="year"></span> Dapo Adedire.
+        </p>
+        <ul>
+          <li>
+            <a href="https://www.github.com/dapoadedire"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/dapo_adedire"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/dapoadedire/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </li>
         </ul>
-      </nav>
-    </header>
-    <main>{% block content %} {% endblock content %}</main>
-    <footer>
-      <p>
-        <!-- copyright icon by fontawesome-->
-        <i class="far fa-copyright"></i>
+      </footer>
+    </div>
 
-        <span id="year"></span> Dapo Adedire.
-      </p>
-      <ul>
-        <li>
-          <a href="https://www.github.com/dapoadedire"
-            ><i class="fab fa-github"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/dapo_adedire"
-            ><i class="fab fa-twitter"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/dapoadedire/"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-        </li>
-      </ul>
-    </footer>
-  </div>
-  
     <script>
-      new Date().getFullYear()
+      new Date().getFullYear();
       document.getElementById("year").innerHTML = new Date().getFullYear();
-
     </script>
   </body>
 </html>

@@ -11,9 +11,18 @@
   </div>
   <div class="title">
     <h2 class="post-title">{{post.title}}</h2>
-    <p class="author"><i class="fas fa-user"></i> :<span>Dapo Adedire</span></p>
-    <p class="post-date"><i class="fa-solid fa-calendar-days"></i> :{{post.date_published|date:"d M Y"}}</p>
-    <p class="share-article">
+    <p class="author">
+      <!-- <i class="fas fa-user"></i> : -->
+
+      <span>by Dapo Adedire</span>
+    </p>
+    <p class="post-date">
+      <!-- <i class="fa-solid fa-calendar-days"></i> : -->
+
+      {{post.date_published|date:"d M Y"}}
+    </p>
+
+    <!-- <p class="share-article">
       <i class="fas fa-share-nodes"></i> 
       :<a
         href="https://twitter.com/intent/tweet?text={{post.title}}&url={{post.get_absolute_url}}"
@@ -32,8 +41,19 @@
       >
         <i class="fab fa-linkedin-in"></i>
       </a>
-    </p>
+    </p> -->
   </div>
+
+  <!-- AddToAny BEGIN -->
+  <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_linkedin"></a>
+    <a class="a2a_button_pocket"></a>
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  </div>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
+
   <div class="post-content">
     <p>{{post.content | safe}}</p>
   </div>
